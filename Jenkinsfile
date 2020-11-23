@@ -1,7 +1,7 @@
 
 pipeline {
   environment {
-    imagename = "devops-app"
+    imagename = "j2sandy/devops-app"
     registryCredential = 'docker-hub-credentials'
     dockerImage = ''
   }
