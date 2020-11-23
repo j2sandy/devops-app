@@ -1,0 +1,128 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Devops demo app",
+    "version": "0.0.1",
+    "title": "Devops demo app",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "localhost",
+  "tags": [
+    {
+      "name": "employee",
+      "description": "employee ops"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/employee/{employeeId}": {
+      "get": {
+        "tags": [
+          "employee"
+        ],
+        "summary": "Find employee by ID",
+        "description": "Returns a single Employee",
+        "operationId": "getEmployeeDetails",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "description": "ID of Employee to return",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          },
+          "400": {
+            "description": "Invalid Employee ID supplied"
+          },
+          "404": {
+            "description": "Employee not found"
+          }
+        }
+      }
+    },
+    "/employee": {
+      "post": {
+        "tags": [
+          "employee"
+        ],
+        "summary": "Save employee details",
+        "description": "saves employee object",
+        "operationId": "saveEmployeeDetails",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "employee details",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/EmployeeDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "saved employee",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Employee": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "firstName": {
+          "type": "string",
+          "description": "Employee First Name"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Employee Last Name"
+        }
+      }
+    },
+    "EmployeeDto": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "description": "Employee First Name"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Employee Last Name"
+        }
+      }
+    }
+  }
+}

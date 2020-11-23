@@ -1,1 +1,16 @@
+server:
+  servlet:
+    contextPath: /devops-app
+  port: 8080
+spring:
+    application:
+      name: devops-app
+    datasource:
+      url: jdbc:postgresql://localhost:5432/employeedb
+      username: postgres
+      password: admin
+devops_app:
+      base_url: /v1
+      employee: /employee
+      base_uri: localhost:8080
 
