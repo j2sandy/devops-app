@@ -1,4 +1,4 @@
-java {
+maven {
     def app
 
     stage('Clone repository') {
