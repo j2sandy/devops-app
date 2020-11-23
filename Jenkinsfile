@@ -1,22 +1,8 @@
 node {
     def app
 
-<<<<<<< HEAD
-pipeline {
-  environment {
-    imagename = "devops-app"
-    registryCredential = 'docker-hub-credentials'
-    dockerImage = ''
-  }
-  agent any
-  stages {
-    stage('Cloning Git') {
-      steps {
-        checkout scm
-=======
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
->>>>>>> dee5ee0cd205f36af1916b3234ed0d1d0aba4199
 
         checkout scm
     }
