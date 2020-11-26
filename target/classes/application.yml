@@ -1,7 +1,7 @@
 server:
   servlet:
     contextPath: /devops-app
-  port: 8080
+  port: 8484
 spring:
     application:
       name: devops-app
@@ -12,5 +12,5 @@ spring:
 devops_app:
       base_url: /v1
       employee: /employee
-      base_uri: localhost:8080
+      base_uri: localhost:8484
 

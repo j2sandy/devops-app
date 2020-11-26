@@ -1,0 +1,454 @@
+{
+	"info": {
+		"_postman_id": "29d699e7-6aca-4414-9b89-4a10a8b7ffdf",
+		"name": "Api Documentation",
+		"description": "Api Documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "devops-app/v1/employee",
+			"item": [
+				{
+					"name": "saves employee object",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/devops-app/v1/employee",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"devops-app",
+								"v1",
+								"employee"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/devops-app/v1/employee",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"devops-app",
+										"v1",
+										"employee"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/devops-app/v1/employee",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"devops-app",
+										"v1",
+										"employee"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/devops-app/v1/employee",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"devops-app",
+										"v1",
+										"employee"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/devops-app/v1/employee",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"devops-app",
+										"v1",
+										"employee"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"firstName\": \"quis enim Lorem\",\n \"id\": \"83e78ba8-03bf-0a04-3b5d-c41a488affb4\",\n \"lastName\": \"nostrud eu Lorem ullamco officia\"\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/devops-app/v1/employee",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"devops-app",
+										"v1",
+										"employee"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Find employee by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "18bf0649-f0b0-4944-9825-cb466523c4bd",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/devops-app/v1/employee/269fbc5c-74c8-4421-a65e-1639017049ce",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"devops-app",
+								"v1",
+								"employee",
+								"269fbc5c-74c8-4421-a65e-1639017049ce"
+							]
+						},
+						"description": "Returns a single Employee"
+					},
+					"response": [
+						{
+							"name": "Employee not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/devops-app/v1/employee/:employeeId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"devops-app",
+										"v1",
+										"employee",
+										":employeeId"
+									],
+									"variable": [
+										{
+											"key": "employeeId"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/devops-app/v1/employee/:employeeId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"devops-app",
+										"v1",
+										"employee",
+										":employeeId"
+									],
+									"variable": [
+										{
+											"key": "employeeId"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/devops-app/v1/employee/:employeeId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"devops-app",
+										"v1",
+										"employee",
+										":employeeId"
+									],
+									"variable": [
+										{
+											"key": "employeeId"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Invalid Employee ID supplied",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/devops-app/v1/employee/:employeeId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"devops-app",
+										"v1",
+										"employee",
+										":employeeId"
+									],
+									"variable": [
+										{
+											"key": "employeeId"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/devops-app/v1/employee/:employeeId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"devops-app",
+										"v1",
+										"employee",
+										":employeeId"
+									],
+									"variable": [
+										{
+											"key": "employeeId"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"firstName\": \"quis enim Lorem\",\n \"id\": \"83e78ba8-03bf-0a04-3b5d-c41a488affb4\",\n \"lastName\": \"nostrud eu Lorem ullamco officia\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "53f98bf0-3509-4879-9f4e-15705adc78ff",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "030111ee-b3ab-4fb7-b759-d579b1db9b23",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "8e6cbc70-c13d-41e9-adea-10440f240ca4",
+			"key": "baseUrl",
+			"value": "localhost:8484"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
